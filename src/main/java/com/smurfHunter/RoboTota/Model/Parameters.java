@@ -7,19 +7,19 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "param-name"
+    "any"
 })
 public class Parameters {
 
-    @JsonProperty("param-name")
+    @JsonProperty("any")
     private String paramName;
 
-    @JsonProperty("param-name")
+    @JsonProperty("any")
     public String getParamName() {
         return paramName;
     }
 
-    @JsonProperty("param-name")
+    @JsonProperty("any")
     public void setParamName(String paramName) {
         this.paramName = paramName;
     }

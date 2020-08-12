@@ -11,19 +11,22 @@ public class TotaController {
 
     @PostMapping("/")
     public QueryResult repeat(@RequestBody Tota tota){
-        TotaReturn totaReturn = new TotaReturn();
-        FulfillmentMessage fulfillmentMessage = new FulfillmentMessage();
-        Text text = new Text();
+
         List<String> textList = new ArrayList<>();
-        textList.add("Nahi");
+        textList.add(tota.getQueryResult().getParameters().getParamName());
+
+        Text text = new Text();
         text.setText(textList);
+
+        FulfillmentMessage fulfillmentMessage = new FulfillmentMessage();
         fulfillmentMessage.setText(text);
-        QueryResult queryResult = new QueryResult();
+
         List<FulfillmentMessage> fulfillmentMessages = new ArrayList<>();
         fulfillmentMessages.add(fulfillmentMessage);
+
+        QueryResult queryResult = new QueryResult();
         queryResult.setFulfillmentMessages(fulfillmentMessages);
 
-        totaReturn.setQueryResult(queryResult);
         return queryResult;
 
     }
