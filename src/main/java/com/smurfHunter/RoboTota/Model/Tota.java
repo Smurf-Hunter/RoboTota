@@ -1,20 +1,66 @@
+
 package com.smurfHunter.RoboTota.Model;
 
+        import com.fasterxml.jackson.annotation.JsonInclude;
+        import com.fasterxml.jackson.annotation.JsonProperty;
+        import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonPropertyOrder({
+        "responseId",
+        "session",
+        "queryResult",
+        "originalDetectIntentRequest"
+})
 public class Tota {
-    private String word;
 
-    public Tota(String word) {
-        this.word = word;
+    @JsonProperty("responseId")
+    private String responseId;
+    @JsonProperty("session")
+    private String session;
+    @JsonProperty("queryResult")
+    private QueryResult queryResult;
+    @JsonProperty("originalDetectIntentRequest")
+    private OriginalDetectIntentRequest originalDetectIntentRequest;
+
+    @JsonProperty("responseId")
+    public String getResponseId() {
+        return responseId;
     }
 
-    public String getWord() {
-        return word;
+    @JsonProperty("responseId")
+    public void setResponseId(String responseId) {
+        this.responseId = responseId;
     }
 
-    public void setWord(String word) {
-        this.word = word;
+    @JsonProperty("session")
+    public String getSession() {
+        return session;
     }
 
-    public Tota() {
+    @JsonProperty("session")
+    public void setSession(String session) {
+        this.session = session;
     }
+
+    @JsonProperty("queryResult")
+    public QueryResult getQueryResult() {
+        return queryResult;
+    }
+
+    @JsonProperty("queryResult")
+    public void setQueryResult(QueryResult queryResult) {
+        this.queryResult = queryResult;
+    }
+
+    @JsonProperty("originalDetectIntentRequest")
+    public OriginalDetectIntentRequest getOriginalDetectIntentRequest() {
+        return originalDetectIntentRequest;
+    }
+
+    @JsonProperty("originalDetectIntentRequest")
+    public void setOriginalDetectIntentRequest(OriginalDetectIntentRequest originalDetectIntentRequest) {
+        this.originalDetectIntentRequest = originalDetectIntentRequest;
+    }
+
 }
