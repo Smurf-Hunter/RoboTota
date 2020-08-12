@@ -12,6 +12,7 @@ public class TotaController {
     @GetMapping("/{word}")
     public Tota repeat(@PathVariable String word){
         return new Tota(word);
+
     }
 
 }
