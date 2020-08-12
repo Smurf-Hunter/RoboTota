@@ -1,3 +1,4 @@
+
 package com.smurfHunter.RoboTota.Model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
